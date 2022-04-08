@@ -21,7 +21,7 @@
 
             <li>
                 @foreach ($post->tags as $tag)
-                    <span class="badge badge-pill badge-primary">{{$tag->name}}</span>
+                    <a href="{{route('admin.tags.show', $tag->id)}}" class="badge badge-pill badge-primary">{{$tag->name}}</a>
                 @endforeach
             </li>
 
@@ -29,6 +29,7 @@
         </ul>
 
 
-        <a href="{{route('admin.posts.index')}}" class="btn btn-primary">Indietro</a>
+        <a href="{{ url()->previous()}}" class="btn btn-primary">Indietro</a>
+        <a href="{{ route('admin.posts.edit', $post->id)}}" class="btn btn-warning">Modifica</a>
     </div>
 @endsection
