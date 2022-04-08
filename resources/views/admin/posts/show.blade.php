@@ -5,7 +5,7 @@
 
         <h1>Dettagli post</h1>
 
-        <ul>
+        <ul class="list-unstyled">
             <li>
                 <strong>Titolo: </strong> {{$post->title}}
             </li>
@@ -17,6 +17,12 @@
             </li>
             <li>
                 <strong>Categoria: </strong> {{isset($post->category) ? $post->category->name : "NULL"}}
+            </li>
+
+            <li>
+                @foreach ($post->tags as $tag)
+                    <span class="badge badge-pill badge-primary">{{$tag->name}}</span>
+                @endforeach
             </li>
 
             

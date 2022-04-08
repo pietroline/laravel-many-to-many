@@ -32,9 +32,16 @@
                   <label for="content">Contenuto del post</label>
                   <textarea class="form-control" name="content" id="content" rows="10" required>{{old("content")}}</textarea>
                 </div>
+
+                @foreach ($tags as $tag)
+                  <div class="form-check">
+                    <input name="tags[]" class="form-check-input" type="checkbox" value="{{$tag->id}}" id="tag_{{$tag->id}}" {{in_array($tag->id, old("tags", [])) ? "checked" : ""}}>
+                    <label class="form-check-label" for="tag_{{$tag->id}}">{{$tag->name}}</label>
+                  </div>
+                @endforeach
                 
                 
-                <button type="submit" class="btn btn-primary">Salva</button>
+                <button type="submit" class="btn btn-primary my-3">Salva</button>
               </form>
 
         </div>

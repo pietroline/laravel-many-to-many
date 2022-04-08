@@ -23,7 +23,7 @@
                             <tr>
                                 <td>{{$post->id}}</td>
                                 <td>{{$post->title}}</td>
-                                <td>{{substr($post->content, 0, 30)}}</td>
+                                <td>{{strlen($post->content) > 30 ? substr($post->content, 0, 30) . "..." : $post->content}}</td>
                                 <td>{{$post->slug}}</td>
                                 <td>{{isset($post->category) ? $post->category->name : "NULL"}}</td>
                                 <td class="d-flex">
