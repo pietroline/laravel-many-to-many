@@ -35,8 +35,9 @@
                                         @csrf
                                         @method("DELETE")
 
-                                        <button class="btn btn-danger">Elimina</button>
+                                        <button class="btn btn-danger mJS_conferma">Elimina</button>
                                     </form>
+
                                 </td>
                             </tr>                            
                         @endforeach
