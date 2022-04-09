@@ -69,7 +69,15 @@ class PostController extends Controller
         $post->fill($data);
         $post->save();
         
-        $post->tags()->sync($data["tags"]);
+        // verifica se sono stati inseriti dei tag
+        if($request->tags == Null){
+            // nessun tag è stato inserito
+            $post->tags()->sync([]);
+        }else{
+            // è stato inserito almeno un tag
+            $post->tags()->sync($data["tags"]);
+        }
+        
 
         return redirect()->route('admin.posts.index');
     }
@@ -134,7 +142,15 @@ class PostController extends Controller
         $post->update($data);
         $post->save();
 
-        $post->tags()->sync($data["tags"]);
+       // verifica se sono stati inseriti dei tag
+        if($request->tags == Null){
+            // nessun tag è stato inserito
+            $post->tags()->sync([]);
+        }else{
+            // è stato inserito almeno un tag
+            $post->tags()->sync($data["tags"]);
+        }
+    
 
         return redirect()->route("admin.posts.index");
     }
