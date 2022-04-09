@@ -94,6 +94,9 @@
 /***/ (function(module, exports) {
 
 // inizio gestione della conferma di eliminazione
+// reaources/views/admin/posts/index
+// reaources/views/admin/categories/index
+// reaources/views/admin/tag/index
 var buttons_delete = document.getElementsByClassName("mJS_conferma");
 
 for (var i = 0; i < buttons_delete.length; i++) {
@@ -103,6 +106,60 @@ for (var i = 0; i < buttons_delete.length; i++) {
     }
   });
 } // fine gestione della conferma di eliminazione
+// ------------------------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------------------------
+// inizio gestione mostra/nascondi password 
+// resources/views/auth
+// inizio per password
+
+
+var hiddenPassword = document.querySelector(".mJS_password_hidden");
+var showedPassword = document.querySelector(".mJS_password_showed");
+var inputTypePassword = document.getElementById("password"); //visualizzo l'icona per mostrare/nascondere la password solo se la input contiene qualcosa
+
+inputTypePassword.addEventListener("input", function (e) {
+  if (inputTypePassword.value.length > 0) {
+    hiddenPassword.classList.replace("d-none", "d-block");
+  } else {
+    hiddenPassword.classList.replace("d-block", "d-none");
+  }
+}); //funzioni di listen per le icone di nascondi/mostra password
+
+hiddenPassword.addEventListener("click", function (event) {
+  hiddenPassword.classList.replace("d-block", "d-none");
+  showedPassword.classList.replace("d-none", "d-block");
+  inputTypePassword.type = "text";
+});
+showedPassword.addEventListener("click", function (event) {
+  hiddenPassword.classList.replace("d-none", "d-block");
+  showedPassword.classList.replace("d-block", "d-none");
+  inputTypePassword.type = "password";
+}); // fine per password
+// inizio per password confirm
+
+var hiddenPasswordConfirm = document.querySelector(".mJS_password_confirm_hidden");
+var showedPasswordConfirm = document.querySelector(".mJS_password_confirm_showed");
+var inputTypePasswordConfirm = document.getElementById("password-confirm"); // visualizzo l'icona per mostrare/nascondere la password solo se la input contiene qualcosa
+
+inputTypePasswordConfirm.addEventListener("input", function (e) {
+  if (inputTypePasswordConfirm.value.length > 0) {
+    hiddenPasswordConfirm.classList.replace("d-none", "d-block");
+  } else {
+    hiddenPasswordConfirm.classList.replace("d-block", "d-none");
+  }
+}); // funzioni di listen per le icone di nascondi/mostra password
+
+hiddenPasswordConfirm.addEventListener("click", function (event) {
+  hiddenPasswordConfirm.classList.replace("d-block", "d-none");
+  showedPasswordConfirm.classList.replace("d-none", "d-block");
+  inputTypePasswordConfirm.type = "text";
+});
+showedPasswordConfirm.addEventListener("click", function (event) {
+  hiddenPasswordConfirm.classList.replace("d-none", "d-block");
+  showedPasswordConfirm.classList.replace("d-block", "d-none");
+  inputTypePasswordConfirm.type = "password";
+}); // fine per password confirm
+// fine gestione mostra/nascondi password
 
 /***/ }),
 
