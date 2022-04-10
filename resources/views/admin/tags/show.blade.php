@@ -15,7 +15,7 @@
           
             <li>
                 @foreach ($tag->posts as $post)
-                    <a href="{{route('admin.posts.show', $post->id)}}" class="badge badge-pill badge-primary">{{$post->title}}</a>
+                    <a href="{{route('admin.posts.show', $post->id)}}" class="badge badge-pill text-white mJS_badge_color">{{$post->title}}</a>
                 @endforeach
             </li>
 

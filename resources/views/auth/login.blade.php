@@ -1,5 +1,13 @@
 @extends('layouts.app')
 
+{{-- ----------------------------------- --}}
+
+@section("scriptJS")
+    <script src="{{ asset('js/authFunctions.js') }}" defer></script>
+@endsection
+
+{{-- ----------------------------------- --}}
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
