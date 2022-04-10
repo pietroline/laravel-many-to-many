@@ -25,7 +25,20 @@ class ValidationTag extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|min:3',
+            'name' => 'required | min:3 | unique:App\Tag',
         ];
+    }
+
+     /**
+     * Get custom attributes for validator errors.
+     *
+     * @return array
+     */
+    public function attributes()
+    {
+        return [
+            'name' => 'Nome',
+        ];
+
     }
 }

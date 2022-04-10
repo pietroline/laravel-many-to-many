@@ -25,9 +25,9 @@ class ValidationPost extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|min:5',
-            'content' => 'required|min:10',
-            'category_id' => 'nullable|exists:categories,id'
+            'title' => 'required | min:5',
+            'content' => 'required | min:10',
+            'category_id' => 'nullable | exists:categories,id'
         ];
     }
 

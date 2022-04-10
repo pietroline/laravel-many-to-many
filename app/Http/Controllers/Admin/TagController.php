@@ -47,16 +47,9 @@ class TagController extends Controller
 
         $data = $request->all();
 
-        // creo slug univoco, nel caso in cui il nuovo è già presente nel database ne creo uno diverso, concatenandolo ad un couter
-        // Prova-nuovo-post 
-        // Prova-nuovo-post-1
+        // lo slug è già univoco perchè il nome del tag non può esserre duplicato 
+        // a causa di una condizione di validation del dato (ValidationTag)
         $slug = Str::slug($data['name']);
-
-        $counter = 1;
-        while (Tag::where('slug', $slug)->first()) {
-            $slug = Str::slug($data['name']) . '-' . $counter;
-            $counter++;
-        }
 
         $data['slug'] = $slug;
 
