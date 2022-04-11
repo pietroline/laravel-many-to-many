@@ -86,10 +86,10 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/js/authFunctions.js":
-/*!***************************************!*\
-  !*** ./resources/js/authFunctions.js ***!
-  \***************************************/
+/***/ "./resources/js/functionsJS/authFunctions.js":
+/*!***************************************************!*\
+  !*** ./resources/js/functionsJS/authFunctions.js ***!
+  \***************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -154,13 +154,13 @@ showedPassword.addEventListener("click", function (event) {
 /***/ }),
 
 /***/ 3:
-/*!*********************************************!*\
-  !*** multi ./resources/js/authFunctions.js ***!
-  \*********************************************/
+/*!*********************************************************!*\
+  !*** multi ./resources/js/functionsJS/authFunctions.js ***!
+  \*********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/pietroline/Scrivania/Personale/boolean/GitHub/progetti_LARAVEL/laravel-many-to-many/resources/js/authFunctions.js */"./resources/js/authFunctions.js");
+module.exports = __webpack_require__(/*! /home/pietroline/Scrivania/Personale/boolean/GitHub/progetti_LARAVEL/laravel-many-to-many/resources/js/functionsJS/authFunctions.js */"./resources/js/functionsJS/authFunctions.js");
 
 
 /***/ })
